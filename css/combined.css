@@ -478,3 +478,11 @@ body:before {
 #footer a:hover {
   color: #ffffff;
 }
+.console {
+  font-family: Courier New, monospace, serif;
+  background-color: #000000;
+  color: #00ff00;
+  overflow: scroll;
+  width: 100%;
+  padding: 10px;
+}
