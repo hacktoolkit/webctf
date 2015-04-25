@@ -627,3 +627,6 @@ body:before {
 .controls .content .examples {
   display: inline-block;
 }
+.controls .content .examples .pure-button {
+  font-size: 70%;
+}

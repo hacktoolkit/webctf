@@ -8,6 +8,8 @@ templates:
 examples:
   - 1
   - 2
+  - 3
+  - 4
 ---
 
 <div class="display">
@@ -21,13 +23,18 @@ examples:
 <div class="controls">
   <div class="content">
     <textarea class="webconsole">This is a web console. Have fun trying out HTML and JavaScript commands here. When ready, press "Try It!"</textarea>
-    <button class="try-it">Try It!</button>
-    <div class="examples">
-      {% for example in page.examples %}
-      {% if forloop.index0 > 0 %}|{% endif %}
-      <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
-      {% endfor %}
-      {% include fragments/gitter_badge.html %}
+    <div class="pure-g">
+      <div class="examples pure-u-1-2">
+        <button href="javascript:void(0);" class="try-button pure-button pure-button-primary">Try It!</button>
+        <a href="javascript:void(0);" class="clear-button pure-button">Clear</a>
+        {% for example in page.examples %}
+        {% if forloop.index0 > 0 %}|{% endif %}
+        <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
+        {% endfor %}
+      </div>
+      <div class="pure-u-1-2 align-right">
+        {% include fragments/gitter_badge.html %}
+      </div>
     </div>
   </div>
 </div>

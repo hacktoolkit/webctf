@@ -34,9 +34,14 @@ function (Y) {
 
     // Custom App Functions
 
-    function handleTryItClicked(e) {
+    function handleTryButtonClicked(e) {
         executeConsole();
 //        Y.WebConsole.toggle();
+    }
+
+    function handleClearButtonClicked(e) {
+        $('.webconsole').val('');
+        executeConsole();
     }
 
     function executeConsole() {
@@ -53,7 +58,8 @@ function (Y) {
 
     // App Initializers
     function initEventHandlers() {
-        main.delegate('click', handleTryItClicked, '.try-it');
+        main.delegate('click', handleTryButtonClicked, '.try-button');
+        main.delegate('click', handleClearButtonClicked, '.clear-button');
         main.delegate('click', handleExampleClicked, '.examples a');
     }
 
