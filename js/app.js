@@ -111,8 +111,18 @@ function (Y) {
         }
     }
 
+    function loadWebCTFCodeSnippet() {
+        var user = Parse.User.current();
+        var codeSnippet = user.get('webctfCodeSnippet');
+        $('.webconsole').val(codeSnippet);
+    }
+
     function handleCloudSaveButtonClicked(e) {
         storeWebCTFCodeSnippet();
+    }
+
+    function handleCloudLoadButtonClicked(e) {
+        loadWebCTFCodeSnippet();
     }
 
     function handleCloudRunButtonClicked(e) {
@@ -122,7 +132,8 @@ function (Y) {
     }
 
     function buildCloudRunUrl(user) {
-        var url = window.location.href;
+        var location = window.location;
+        var url = location.protocol + '//' + location.host + location.pathname;
         var ctfUrl = url + '?ctf=' + user.get('username');
         return ctfUrl;
     }
@@ -154,6 +165,7 @@ function (Y) {
         main.delegate('click', handleExampleClicked, '.examples .example');
         main.delegate('click', handleWallButtonClicked, '.wall-button');
         main.delegate('click', handleCloudSaveButtonClicked, '.cloud-save-button');
+        main.delegate('click', handleCloudLoadButtonClicked, '.cloud-load-button');
         main.delegate('click', handleCloudRunButtonClicked, '.cloud-run-button');
     }
 
