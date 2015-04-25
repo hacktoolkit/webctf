@@ -539,9 +539,18 @@ body:before {
   height: 100%;
   padding: 20px;
 }
-<<<<<<< HEAD
-.controls .content .webconsole-form {
+.controls .content .webconsole {
+  font-family: Courier New, monospace, serif;
+  background-color: #000000;
+  color: #00ff00;
+  overflow: scroll;
+  width: 100%;
   height: 95%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.controls .content .examples {
+  display: inline-block;
 }
 .controls {
   background-color: #7f8c8d;
@@ -563,8 +572,6 @@ body:before {
   height: 100%;
   padding: 20px;
 }
-=======
->>>>>>> more stuff, here we go
 .controls .content .webconsole {
   font-family: Courier New, monospace, serif;
   background-color: #000000;

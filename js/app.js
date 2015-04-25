@@ -1,3 +1,5 @@
+var _Y = null; // global handle to YUI object
+
 YUI({
     modules: {
         'login-manager': {
@@ -9,6 +11,7 @@ YUI({
     'event',
     'login-manager',
 function (Y) {
+    _Y = Y;
     /* -------------------------------------------------- */
     /* YUI "Local" Globals */
 
