@@ -1,4 +1,4 @@
-name: Web CTF (Capture the Flag)
+name: Web Security CTF (Capture the Flag)
 markdown: redcarpet
 highlighter: pygments
 exclude: [vendor]
