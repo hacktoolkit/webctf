@@ -1,6 +1,13 @@
-YUI().use(
+YUI({
+    modules: {
+        'login-manager': {
+            fullpath: 'js/htk/yui/modules/login_manager.js'
+        }
+    }
+}).use(
     'node',
     'event',
+    'login-manager',
 function (Y) {
     /* -------------------------------------------------- */
     /* YUI "Local" Globals */
