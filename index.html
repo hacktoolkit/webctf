@@ -29,6 +29,7 @@ examples:
       {% if forloop.index0 > 0 %}|{% endif %}
       <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
       {% endfor %}
+      {% include fragments/gitter_badge.html %}
     </div>
   </div>
 </div>
