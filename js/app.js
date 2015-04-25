@@ -113,8 +113,10 @@ function (Y) {
 
     function loadWebCTFCodeSnippet() {
         var user = Parse.User.current();
-        var codeSnippet = user.get('webctfCodeSnippet');
-        $('.webconsole').val(codeSnippet);
+        user.refresh().then(function(updatedUser) {
+            var codeSnippet = updatedUser.get('webctfCodeSnippet');
+            $('.webconsole').val(codeSnippet);
+        });
     }
 
     function handleCloudSaveButtonClicked(e) {
@@ -158,6 +160,16 @@ function (Y) {
 
     }
 
+    function handleUserNameClicked(e) {
+        var user = Parse.User.current();
+        var username = prompt('Desired username', user.get('username'));
+        if (username !== '') {
+            var user = Parse.User.current();
+            user.set('username', username);
+            user.save();
+        }
+    }
+
     // App Initializers
     function initEventHandlers() {
         main.delegate('click', handleTryButtonClicked, '.try-button');
@@ -167,6 +179,7 @@ function (Y) {
         main.delegate('click', handleCloudSaveButtonClicked, '.cloud-save-button');
         main.delegate('click', handleCloudLoadButtonClicked, '.cloud-load-button');
         main.delegate('click', handleCloudRunButtonClicked, '.cloud-run-button');
+        header.delegate('click', handleUserNameClicked, '.login-user-info');
     }
 
     function init() {
