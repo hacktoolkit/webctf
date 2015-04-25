@@ -1,0 +1,25 @@
+<div class="controls">
+  <div class="content">
+    <textarea class="webconsole">This is a web console. Have fun trying out HTML and JavaScript commands here. When ready, press "Try It!"</textarea>
+    <div class="pure-g">
+      <div class="examples pure-u-1-2">
+        <div class="control-buttons">
+          <a href="javascript:void(0);" class="try-button pure-button pure-button-primary">Try It!</a>
+          <a href="javascript:void(0);" class="clear-button pure-button">Clear</a>
+        </div>
+        <div class="control-buttons logged-in hidden">
+          <a href="javascript:void(0);" class="save-button pure-button">Save</a>
+          <a href="javascript:void(0);" class="run-button pure-button">Run</a>
+        </div>
+        {% for example in page.examples %}
+        {% if forloop.index0 > 0 %}|{% endif %}
+        <a class="example" href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
+        {% endfor %}
+      </div>
+      <div class="pure-u-1-2 align-right">
+        <a href="javascript:void(0);" class="wall-button">Graffiti Wall</a>
+        {% include fragments/gitter_badge.html %}
+      </div>
+    </div>
+  </div>
+</div>

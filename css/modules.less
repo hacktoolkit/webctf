@@ -42,7 +42,11 @@
         .bg-white;
         .rounded-10;
         .fg-black;
-        height: 100%
+        height: 100%;
+        .info {
+            font-weight: bold;
+            .fg-flatui-concrete;
+        }
     }
 }
 
@@ -100,9 +104,48 @@
          }
          .examples {
              display: inline-block;
+             .control-buttons {
+                 display: inline-block;
+             }
              .pure-button {
                  font-size: 70%;
+                 display: inline-block;
              }
          }
+    }
+}
+
+.graffiti-wall {
+    .bg-flatui-silver;
+    position: fixed;
+    @width: 300px;
+    width: @width;
+    height: 100%;
+    top: 0px;
+    left: -@width;
+    transition: 0.2s;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 20px;
+    &.active {
+        left: 0;
+    }
+    .content {
+        position: absolute;
+        .bg-white;
+        .rounded-10;
+        .fg-black;
+        @padding: 20px;
+        @offset: (2 * @padding);
+        height: ~"calc(100% - @{offset})";
+        width: ~"calc(100% - @{offset})";
+        box-sizing: border-box;
+        padding: @padding;
+        .wall-content {
+            @offset: (4 * @padding);
+            height: ~"calc(100% - @{offset})";
+            overflow-y: scroll;
+            width: 100%;
+        }
     }
 }

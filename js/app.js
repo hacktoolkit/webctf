@@ -21,6 +21,7 @@ function (Y) {
 
     // CSS selectors
     var CSS_CLASS_HIDDEN = 'hidden';
+    var CSS_CLASS_ACTIVE = 'active';
 
     // Nodes
     var header = Y.one('#header');
@@ -56,11 +57,21 @@ function (Y) {
         $('.webconsole').val(t);
     }
 
+    function handleWallButtonClicked(e) {
+        var wall = Y.one('.graffiti-wall');
+        if (wall.hasClass(CSS_CLASS_ACTIVE)) {
+            wall.removeClass(CSS_CLASS_ACTIVE);
+        } else {
+            wall.addClass(CSS_CLASS_ACTIVE);
+        }
+    }
+
     // App Initializers
     function initEventHandlers() {
         main.delegate('click', handleTryButtonClicked, '.try-button');
         main.delegate('click', handleClearButtonClicked, '.clear-button');
-        main.delegate('click', handleExampleClicked, '.examples a');
+        main.delegate('click', handleExampleClicked, '.examples .example');
+        main.delegate('click', handleWallButtonClicked, '.wall-button');
     }
 
     function init() {
