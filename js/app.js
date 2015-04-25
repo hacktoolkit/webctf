@@ -117,9 +117,34 @@ function (Y) {
 
     function handleCloudRunButtonClicked(e) {
         var user = Parse.User.current();
+        var ctfUrl = buildCloudRunUrl(user);
+        window.open(ctfUrl);
+    }
+
+    function buildCloudRunUrl(user) {
         var url = window.location.href;
         var ctfUrl = url + '?ctf=' + user.get('username');
-        window.open(ctfUrl);
+        return ctfUrl;
+    }
+
+    function populateGraffitiList() {
+        var query = new Parse.Query(Parse.User);
+        query.notEqualTo('webctfCodeSnippet', '');
+        query.ascending('createdAt');
+        query.find({
+            success: function(results) {
+                var users = results;
+                var stuff = _.map(users, function(user) {
+                    var ctfUrl = buildCloudRunUrl(user);
+                    var markup = '<li><a href="' + ctfUrl + '" target="_blank">' + user.getName() + '</a></li>';
+                    return markup;
+                });
+                $('.wall-content').html('<ul>' + stuff.join('') + '</ul>');
+            },
+            error: function(error) {
+            }
+        });
+
     }
 
     // App Initializers
@@ -135,6 +160,7 @@ function (Y) {
     function init() {
         Y.on('load', function(e) {
             runWebCTFCodeSnippet();
+            populateGraffitiList();
         });
     }
     initEventHandlers();
