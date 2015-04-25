@@ -1,20 +1,3 @@
-if (PARSE_APPLICATION_ID && PARSE_JS_KEY) {
-    Parse.initialize(PARSE_APPLICATION_ID, PARSE_JS_KEY);
-}
-
-/*
-  var TestObject = Parse.Object.extend("TestObject");
-  var testObject = new TestObject();
-  testObject.save({foo: "bar"}, {
-  success: function(object) {
-  $(".success").show();
-  },
-  error: function(model, error) {
-  $(".error").show();
-  }
-  });
-*/
-
 YUI().use(
     'node',
     'event',
@@ -87,14 +70,32 @@ function (Y) {
         syncLoginButtons();
     }
 
+    function handleTryItClicked(e) {
+        executeConsole();        
+    }
+
+    function executeConsole() {
+        var consoleContent = $('.webconsole').val();
+        $('.output').html(consoleContent);
+    }
+
+    function handleExampleClicked(e) {
+        var node = e.target;
+        var exampleId = node.getAttribute('data:example_id');
+        var t = _.template($('#t_example' + exampleId).html());
+        $('.webconsole').val(t);
+    }
+
     // App Initializers
     function initEventHandlers() {
         Y.delegate('click', handleLoginClicked, '#header', '#' + CSS_ID_LOGIN_BUTTON);
         Y.delegate('click', handleLogoutClicked, '#header', '#' + CSS_ID_LOGOUT_BUTTON);
+        main.delegate('click', handleTryItClicked, '.try-it');
+        main.delegate('click', handleExampleClicked, '.examples a');
     }
 
     function init() {
-        syncLoginButtons();
+        //syncLoginButtons();
     }
     initEventHandlers();
     init();

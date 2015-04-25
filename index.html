@@ -1,17 +1,34 @@
 ---
 layout: htk_base
 title: Home
+javascripts:
+  - js/app.js
+templates:
+  - templates/all.html
+examples:
+  - 1
+  - 2
+  - 3
+  - 4
 ---
 
-<div class="pure-g">
-  <div class="pure-u-1 pure-u-md-1-5 bg-orange">
-    <h3>{{ page.title }}</h3>
-    <h5>1/5 column</h5>
+<div class="display">
+  <div class="content">
+    <b>This is where console stuff gets interpreted and displayed</b>
+    <div class="output">
+    </div>
   </div>
-  <div class="pure-u-1 pure-u-md-4-5 bg-flatui-midnight-blue fg-flatui-carrot" style="padding: 50px; box-sizing: border-box;">
-    <h5>4/5 column</h5>
-    <div class="align-left bg-white fg-black rounded-10" style="padding: 50px;">
-      oh la la
+</div>
+
+<div class="controls">
+  <div class="content">
+    <textarea class="webconsole">This is a web console. Have fun trying out HTML and JavaScript commands here. When ready, press "Try It!"</textarea>
+    <button class="try-it">Try It!</button>
+    <div class="examples">
+      {% for example in page.examples %}
+      {% if forloop.index0 > 0 %}|{% endif %}
+      <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
+      {% endfor %}
     </div>
   </div>
 </div>
