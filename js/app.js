@@ -79,11 +79,19 @@ function (Y) {
         $('.output').html(consoleContent);
     }
 
+    function handleExampleClicked(e) {
+        var node = e.target;
+        var exampleId = node.getAttribute('data:example_id');
+        var t = _.template($('#t_example' + exampleId).html());
+        $('.webconsole').val(t);
+    }
+
     // App Initializers
     function initEventHandlers() {
         Y.delegate('click', handleLoginClicked, '#header', '#' + CSS_ID_LOGIN_BUTTON);
         Y.delegate('click', handleLogoutClicked, '#header', '#' + CSS_ID_LOGOUT_BUTTON);
         main.delegate('click', handleTryItClicked, '.try-it');
+        main.delegate('click', handleExampleClicked, '.examples a');
     }
 
     function init() {

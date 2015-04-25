@@ -3,6 +3,13 @@ layout: htk_base
 title: Home
 javascripts:
   - js/app.js
+templates:
+  - templates/all.html
+examples:
+  - 1
+  - 2
+  - 3
+  - 4
 ---
 
 <div class="display">
@@ -17,5 +24,11 @@ javascripts:
   <div class="content">
     <textarea class="webconsole">This is a web console. Have fun trying out HTML and JavaScript commands here. When ready, press "Try It!"</textarea>
     <button class="try-it">Try It!</button>
+    <div class="examples">
+      {% for example in page.examples %}
+      {% if forloop.index0 > 0 %}|{% endif %}
+      <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
+      {% endfor %}
+    </div>
   </div>
 </div>

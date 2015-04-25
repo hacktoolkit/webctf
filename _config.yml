@@ -50,4 +50,5 @@ api:
     access_token: c3961ec6c12d40e7be1993e27c1e2917
 
 fonts:
-  google: Cabin+Condensed:400,500,600,700
+#  google: Cabin+Condensed:400,500,600,700
+  google: Merriweather+Sans:300,400,700

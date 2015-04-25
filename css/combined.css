@@ -478,10 +478,12 @@ body:before {
 #footer a:hover {
   color: #ffffff;
 }
+/* Google Web Fonts - http://www.google.com/fonts */
 #header {
+  font-family: 'Merriweather Sans', sans-serif;
   background-color: #e67e22;
   height: 45px;
-  padding: 5px;
+  padding: 5px 20px;
   box-sizing: border-box;
 }
 #wrap {
@@ -534,10 +536,7 @@ body:before {
   height: 100%;
   padding: 20px;
 }
-.controls .content .webconsole-form {
-  height: 95%;
-}
-.webconsole {
+.controls .content .webconsole {
   font-family: Courier New, monospace, serif;
   background-color: #000000;
   color: #00ff00;
@@ -546,4 +545,7 @@ body:before {
   height: 95%;
   box-sizing: border-box;
   padding: 10px;
+}
+.controls .content .examples {
+  display: inline-block;
 }
