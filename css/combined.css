@@ -539,6 +539,29 @@ body:before {
   height: 100%;
   padding: 20px;
 }
+.controls .content .webconsole-form {
+  height: 95%;
+}
+.controls {
+  background-color: #7f8c8d;
+  height: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.controls .content {
+  text-align: left;
+  background-color: #ffffff;
+  color: #000000;
+  -webkit-border-radius: 0.625em;
+  /* Safari prototype */
+  -moz-border-radius: 0.625em;
+  /* Gecko browsers */
+  border-radius: 0.625em;
+  /* Everything else - limited support at the moment */
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px;
+}
 .controls .content .webconsole {
   font-family: Courier New, monospace, serif;
   background-color: #000000;

@@ -3,6 +3,7 @@ layout: htk_base
 title: Home
 javascripts:
   - js/app.js
+<<<<<<< HEAD
 templates:
   - templates/all.html
 examples:
@@ -10,12 +11,15 @@ examples:
   - 2
   - 3
   - 4
+=======
+>>>>>>> progress commit
 ---
 
 <div class="display">
   <div class="content">
     <b>This is where console stuff gets interpreted and displayed</b>
     <div class="output">
+<<<<<<< HEAD
     </div>
   </div>
 </div>
@@ -29,6 +33,15 @@ examples:
       {% if forloop.index0 > 0 %}|{% endif %}
       <a href="javascript:void(0);" data:example_id="{{ example }}">Example {{ example }}</a>
       {% endfor %}
+=======
+>>>>>>> progress commit
     </div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="content">
+    <textarea class="webconsole">This is a web console. Have fun trying out commands here. When ready, press "Try It!"</textarea>
+    <button class="try-it">Try It!</button>
   </div>
 </div>
