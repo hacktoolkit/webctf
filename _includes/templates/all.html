@@ -1,1 +1,3 @@
-<script type="text/x-template" id="t_example1">{% include templates/example1.html %}</script>
+{% for example in page.examples %}
+<script type="text/x-template" id="t_example{{ example }}">{% include templates/example{{ example }}.html %}</script>
+{% endfor %}

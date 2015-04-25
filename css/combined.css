@@ -479,6 +479,44 @@ body:before {
   color: #ffffff;
 }
 /* Google Web Fonts - http://www.google.com/fonts */
+.terminal-style {
+  background-color: #000000;
+  color: #00ff00;
+  opacity: 0.8;
+  font-family: Courier New, monospace, serif;
+  font-weight: bold;
+}
+.yui3-panel .yui3-widget-hd {
+  font-family: "Lucida Sans Unicode", "Lucida Grand", sans-serif;
+}
+.yui3-panel .yui3-widget-bd {
+  background-color: #000000;
+  color: #00ff00;
+  opacity: 0.8;
+  font-family: Courier New, monospace, serif;
+  font-weight: bold;
+}
+.yui3-panel .yui3-widget-bd pre {
+  background-color: #000000;
+  color: #00ff00;
+  opacity: 0.8;
+  font-family: Courier New, monospace, serif;
+  font-weight: bold;
+}
+.yui3-panel .yui3-widget-bd.console-container {
+  height: 100%;
+}
+.yui3-panel .yui3-widget-bd .console {
+  background-color: #000000;
+  color: #00ff00;
+  opacity: 0.8;
+  font-family: Courier New, monospace, serif;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  overflow: scroll;
+}
 #header {
   font-family: 'Merriweather Sans', sans-serif;
   background-color: #e67e22;

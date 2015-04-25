@@ -4,12 +4,16 @@ YUI({
     modules: {
         'login-manager': {
             fullpath: 'js/htk/yui/modules/login_manager.js'
+        },
+        'web-console': {
+            fullpath : 'js/htk/yui/modules/web_console.js'
         }
     }
 }).use(
     'node',
     'event',
     'login-manager',
+    'web-console',
 function (Y) {
     _Y = Y;
     /* -------------------------------------------------- */
@@ -31,7 +35,8 @@ function (Y) {
     // Custom App Functions
 
     function handleTryItClicked(e) {
-        executeConsole();        
+        executeConsole();
+//        Y.WebConsole.toggle();
     }
 
     function executeConsole() {

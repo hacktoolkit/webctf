@@ -14,6 +14,7 @@ htk:
   show_footer: true
   javascripts:
   templates:
+    - htk/templates/web_console.html
 
 meta:
   description: Jekyll Hacktoolkit. HTML5 Boilerplate inspired. Opinionated framework.
