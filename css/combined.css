@@ -486,6 +486,10 @@ body:before {
   padding: 5px 20px;
   box-sizing: border-box;
 }
+#header .header-left {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 #header .header-right {
   margin-left: -10px;
 }
