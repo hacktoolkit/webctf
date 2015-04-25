@@ -4,7 +4,7 @@ highlighter: pygments
 exclude: [vendor]
 
 copyright:
-  author: jontsai
+  author: Jonathan Tsai (@jontsai)
   url: http://twitter.com/jontsai
   year: 2015
 
@@ -33,7 +33,7 @@ libs:
 
 api:
   facebook:
-    app_id:
+    app_id: 1389584637938616
   google:
     maps:
       init: false
@@ -44,8 +44,8 @@ api:
       default_zoom: 8
       container: map_canvas
   parse:
-    app_id:
-    js_key:
+    app_id: Cgh9t2zZXEilT3ecLJjVfImk0av81VUJtknqOKLT
+    js_key: Zo2enxEvQ0mXoA6o04kjwYw0XTVcf4Iy8f2j6m1b
   rollbar:
     access_token: c3961ec6c12d40e7be1993e27c1e2917
 

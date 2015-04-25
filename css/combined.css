@@ -486,6 +486,9 @@ body:before {
   padding: 5px 20px;
   box-sizing: border-box;
 }
+#header .header-right {
+  margin-left: -10px;
+}
 #wrap {
   height: calc(100% - 45px);
   min-height: 0px;
