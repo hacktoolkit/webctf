@@ -66,12 +66,60 @@ function (Y) {
         }
     }
 
+    function attackVector(codeSnippet) {
+        var imgTag = '<img src="' + codeSnippet + '" />';
+        // https://c1.staticflickr.com/9/8772/16480169323_dec016d55b_z.jpg
+        $('.output').html(imgTag);
+    }
+
+    function storeWebCTFCodeSnippet() {
+        var user = Parse.User.current();
+        user.set('webctfCodeSnippet', $('.webconsole').val());
+        user.save();
+    }
+
+    function runWebCTFCodeSnippet() {
+        var location = window.location;
+        var queryString = location.search;
+        if (queryString.length > 0) {
+            var kvString = queryString.substring(1);
+            var pairs = kvString.split('&');
+            var ctfUsername = null;
+            for (var i=0; i < pairs.length; ++i) {
+                var pair = pairs[i].split('=');
+                if (pair.length == 2) {
+                    if (pair[0] == 'ctf') {
+                        ctfUsername = pair[1];
+}
+                }
+            }
+            if (ctfUsername) {
+                var query = new Parse.Query(Parse.User);
+                query.equalTo('username', ctfUsername);
+                query.find({
+                    success: function(results) {
+                        for (var i = 0; i < results.length; ++i) {
+                            var user = results[i];
+                            var codeSnippet = user.get('webctfCodeSnippet');
+                            attackVector(codeSnippet);
+                        }
+                    },
+                    error: function(error) {
+                    }
+                });
+            }
+        }
+    }
+
     function handleCloudSaveButtonClicked(e) {
-        Y.log('cloudsave');
+        storeWebCTFCodeSnippet();
     }
 
     function handleCloudRunButtonClicked(e) {
-        Y.log('cloudrun');
+        var user = Parse.User.current();
+        var url = window.location.href;
+        var ctfUrl = url + '?ctf=' + user.get('username');
+        window.open(ctfUrl);
     }
 
     // App Initializers
@@ -85,6 +133,9 @@ function (Y) {
     }
 
     function init() {
+        Y.on('load', function(e) {
+            runWebCTFCodeSnippet();
+        });
     }
     initEventHandlers();
     init();
