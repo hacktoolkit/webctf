@@ -539,6 +539,7 @@ body:before {
   height: 100%;
   padding: 20px;
 }
+<<<<<<< HEAD
 .controls .content .webconsole-form {
   height: 95%;
 }
@@ -562,6 +563,8 @@ body:before {
   height: 100%;
   padding: 20px;
 }
+=======
+>>>>>>> more stuff, here we go
 .controls .content .webconsole {
   font-family: Courier New, monospace, serif;
   background-color: #000000;
