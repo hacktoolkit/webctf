@@ -1,20 +1,21 @@
 ---
 layout: htk_base
 title: Home
+javascripts:
+  - js/app.js
 ---
 
-<div class="pure-g">
-  <div class="pure-u-1 pure-u-md-1-5 bg-orange">
-    <h3>{{ page.title }}</h3>
-    <h5>1/5 column</h5>
-  </div>
-  <div class="pure-u-1 pure-u-md-4-5 bg-flatui-midnight-blue fg-flatui-carrot" style="padding: 50px; box-sizing: border-box;">
-    <h5>4/5 column</h5>
-    <div class="align-left bg-white fg-black rounded-10" style="padding: 50px;">
-      <form action="" method="POST">
-        <textarea class="console">This is a web console. Have fun trying out commands here.</textarea>
-        <button type="submit">Try It!</button>
-      </form>
+<div class="display">
+  <div class="content">
+    <b>This is where console stuff gets interpreted and displayed</b>
+    <div class="output">
     </div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="content">
+    <textarea class="webconsole">This is a web console. Have fun trying out commands here. When ready, press "Try It!"</textarea>
+    <button class="try-it">Try It!</button>
   </div>
 </div>
