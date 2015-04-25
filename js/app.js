@@ -66,12 +66,22 @@ function (Y) {
         }
     }
 
+    function handleCloudSaveButtonClicked(e) {
+        Y.log('cloudsave');
+    }
+
+    function handleCloudRunButtonClicked(e) {
+        Y.log('cloudrun');
+    }
+
     // App Initializers
     function initEventHandlers() {
         main.delegate('click', handleTryButtonClicked, '.try-button');
         main.delegate('click', handleClearButtonClicked, '.clear-button');
         main.delegate('click', handleExampleClicked, '.examples .example');
         main.delegate('click', handleWallButtonClicked, '.wall-button');
+        main.delegate('click', handleCloudSaveButtonClicked, '.cloud-save-button');
+        main.delegate('click', handleCloudRunButtonClicked, '.cloud-run-button');
     }
 
     function init() {

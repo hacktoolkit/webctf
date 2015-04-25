@@ -631,10 +631,10 @@ body:before {
 .controls .content .examples {
   display: inline-block;
 }
-.controls .content .examples .control-buttons {
+.controls .content .control-buttons {
   display: inline-block;
 }
-.controls .content .examples .pure-button {
+.controls .content .control-buttons .pure-button {
   font-size: 70%;
   display: inline-block;
 }
