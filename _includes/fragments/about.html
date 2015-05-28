@@ -1,0 +1,15 @@
+<div class="about">
+  <div class="content">
+    <h5>
+      <i class="fa fa-info-circle"></i>
+      About Security Attacks
+    </h5>
+    <div class="about-content">
+      <ul>
+        {% for security_attack in page.security_attacks %}
+        <li><a href="{{ security_attack.url }}" target="_blank">{{ security_attack.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

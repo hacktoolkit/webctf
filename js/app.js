@@ -57,6 +57,15 @@ function (Y) {
         $('.webconsole').val(t);
     }
 
+    function handleAboutButtonClicked(e) {
+        var about = Y.one('.about');
+        if (about.hasClass(CSS_CLASS_ACTIVE)) {
+            about.removeClass(CSS_CLASS_ACTIVE);
+        } else {
+            about.addClass(CSS_CLASS_ACTIVE);
+        }
+    }
+
     function handleWallButtonClicked(e) {
         var wall = Y.one('.graffiti-wall');
         if (wall.hasClass(CSS_CLASS_ACTIVE)) {
@@ -175,6 +184,7 @@ function (Y) {
         main.delegate('click', handleTryButtonClicked, '.try-button');
         main.delegate('click', handleClearButtonClicked, '.clear-button');
         main.delegate('click', handleExampleClicked, '.examples .example');
+        main.delegate('click', handleAboutButtonClicked, '.about-button');
         main.delegate('click', handleWallButtonClicked, '.wall-button');
         main.delegate('click', handleCloudSaveButtonClicked, '.cloud-save-button');
         main.delegate('click', handleCloudLoadButtonClicked, '.cloud-load-button');
